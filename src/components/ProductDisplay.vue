@@ -80,50 +80,50 @@
 <script>
 
 export default {
-  data () {
-    return {
-      nextWomen: true,
-      nextMens:false,
-			nextAnavailable: false,
-      products: '',
+  data () { 
+    return { 
+      nextWomen: true, 
+      nextMens:false, 
+			nextAnavailable: false, 
+      products: '', 
     }
   },
   
   beforeCreate() {
-    let api = "https://fakestoreapi.com/products/16"
-    fetch (api)
-    .then((result) => result.json())
-    .then((data) => (this.products = data))
+    let api = "https://fakestoreapi.com/products/16" 
+    fetch (api) 
+    .then((result) => result.json()) 
+    .then((data) => (this.products = data)) 
 },
 
   methods: {  
 
     async women(){
-      const api = await fetch ('https://fakestoreapi.com/products/4');
-      const response = await api.json()
-      const data = response 
-      console.log(this.products = data);
+      const api = await fetch ('https://fakestoreapi.com/products/4'); 
+      const response = await api.json() 
+      const data = response  
+      console.log(this.products = data); 
 
-      this.nextAnavailable = false;
-      this.nextWomen = false;
+      this.nextAnavailable = false; 
+      this.nextWomen = false; 
       this.nextMens = true;
     },
 
     async mens(){
-      const api = await fetch ('https://fakestoreapi.com/products/16');
-      const response = await api.json()
-      const data = response 
-      console.log(this.products = data);
+      const api = await fetch ('https://fakestoreapi.com/products/16'); 
+      const response = await api.json() 
+      const data = response  
+      console.log(this.products = data); 
 
-      this.nextAnavailable = true;
-      this.nextWomen = false;
-      this.nextMens = false;
-    },
+      this.nextAnavailable = true; 
+      this.nextWomen = false; 
+      this.nextMens = false; 
+    }, 
 
     unavailable(){
-      this.nextWomen = true;
-      this.nextAnavailable = false;
-      this.nextMens = false;
+      this.nextWomen = true; 
+      this.nextAnavailable = false; 
+      this.nextMens = false; 
     }
   }
 }
