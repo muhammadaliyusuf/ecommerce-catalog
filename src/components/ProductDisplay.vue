@@ -1,6 +1,5 @@
 <template lang="">
   <div id="app">
-
     <div id="loader" class="center"></div>
 
     <div class="container">
@@ -129,7 +128,3 @@ export default {
   }
 }
 </script>
-
-
-
-
